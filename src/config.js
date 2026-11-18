@@ -9,17 +9,17 @@ export const SENSORS = [
 
 export const LEVELS = [
   {
-    max: 200,
+    max: 50,
     color: "#3B82F6", // blauw
     label: "Geen druk",
   },
   {
-    max: 1500,
+    max: 200,
     color: "#22C55E", // groen
     label: "Weinig druk",
   },
   {
-    max: 3000,
+    max: 500,
     color: "#EAB308", // geel
     label: "Meer druk",
   },
