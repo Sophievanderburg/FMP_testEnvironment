@@ -10,7 +10,7 @@
 //
 //  WAAROM APART? De rest van de app weet niet HOE de data binnenkomt.
 //  Straks maken we een useWebSocketData.js (wifi) die precies hetzelfde
-//  teruggeeft. Dan wissel je in App.jsx één regel om, en werkt alles door.
+//  teruggeeft. Dan wissel je in App.js één regel om, en werkt alles door.
 // =====================================================================
 import { useState, useCallback } from "react";
 import { BAUD_RATE } from "../config.js";
@@ -29,9 +29,7 @@ export function useSerialData() {
     // Web Serial werkt alleen in Chrome en Edge (niet in Safari/Firefox).
     if (!("serial" in navigator)) {
       setStatus("error");
-      setError(
-        "Deze browser ondersteunt geen Web Serial. Gebruik Chrome of Edge.",
-      );
+      setError("Deze browser ondersteunt geen Web Serial. Gebruik Chrome of Edge.");
       return;
     }
 
