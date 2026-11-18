@@ -1,98 +1,79 @@
-@import 'styles/colors.css';
-*{
+@import "styles/colors.css";
+* {
   margin: 0;
   padding: 0;
 }
 
-.header, .main, .footer{
-  background-color: var(--background);
+body {
+  font-family: system-ui, sans-serif;
+  background: #f4f4f2;
+  color: #222;
+  margin: 0;
+  padding: 32px;
 }
-
-.header {
-  height: 5vh;
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+p.hint {
+  color: #666;
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+button {
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+#status {
+  margin-left: 12px;
+  font-size: 14px;
+  color: #666;
+}
+#sensors {
   display: flex;
-  align-items: center; 
-  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
 }
-
-.main{
-  height: 90vh;
-  padding: 0 2.5em;
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  column-gap: 1em;
-  row-gap: 1em;
-}
-
-.videocall,.epd, .notes{
-  width: calc(100% - 3em); /* to compensate the padding */
-  height: calc(100% - 2em);
-  background-color: #fff;
-  border-radius: 2em;
-}
-
-.videocall{
-  width: 100%;
-  height: 100%;
-  grid-column: 1/5;
-  grid-row: 1/7;
-
-  position: relative;
-}
-
-.video{
-  width: 100%;
-  height: 100%;
-  background-color: #F00;
-  border-radius: 2em;
-}
-
-.caller{
-  width: 25%;
-  aspect-ratio: 3/2;
-  background-color: #0F0;
-  border-radius: 1.5em;
-
-  position: absolute;
-  bottom: 1em;
-  right: 1em;
-}
-
-.data{
-  width: 75%;
-  aspect-ratio: 3/2;
-  background-image: linear-gradient(to top right, blue, rgba(0,0,0,0),  rgba(0,0,0,0));  border-radius: 0 0 0 1.5em ;
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.epd h1, .notes h1{
-  width: 100%;
+.sensor {
+  width: 140px;
   text-align: center;
-  margin-bottom: 1em;
 }
-
-.epd{
-  grid-column: 5/7;
-  grid-row: 1/4;
-
-  padding: 1em 1.5em;
+.dot {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  background: #ccc;
+  transition: background-color 0.15s;
 }
-
-.notes{
-  grid-column: 5/7;
-  grid-row: 4/7;
-  
-  padding: 1em 1.5em;
+.name {
+  font-weight: 600;
 }
-
-.footer{
-  height: 5vh;
-
+.value {
+  color: #666;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.legend {
+  margin-top: 32px;
   display: flex;
-  align-items: center; 
-  justify-content: center;
+  gap: 18px;
+  font-size: 13px;
+  color: #555;
+  flex-wrap: wrap;
+}
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: -1px;
 }

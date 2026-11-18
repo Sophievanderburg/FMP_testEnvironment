@@ -1,36 +1,19 @@
-import './App.css';
-import sessionNotes from './data/notes.json';
+import "./App.css";
 
 function App() {
-  const notes = Object.values(sessionNotes.noteItems);
-
   return (
     <div className="App">
-      <header className="header">
-        <p>nové</p>
-      </header>
-      <main className="main">
-        <div className="videocall">
-          <div className="video"></div>
-          <div className="caller"></div>
-          <div className="data"></div>
-        </div>
-        <div className="epd">
-          <h1>EPD</h1>
-        </div>
-        <div className="notes">
-          <h1>Notes</h1>
-          {notes.map((note) => (
-            <div key={note.title} className="note">
-              <h2>{note.title}</h2>
-              <p>{note.content}</p>
-            </div>
-          ))}
-        </div>
-      </main>
-      <footer className="footer">
-        <p>Sophie van der Burg</p>
-      </footer>
+      <h1>FSR kleurtest</h1>
+      <p class="hint">
+        Open deze pagina in Chrome of Edge. Sluit eerst de Serial Monitor én de
+        Serial Plotter in Arduino.
+      </p>
+
+      <button id="connect">Verbind met ESP32</button>
+      <p id="status">Niet verbonden</p>
+
+      <div id="sensors"></div>
+      <div class="legend" id="legend"></div>
     </div>
   );
 }
